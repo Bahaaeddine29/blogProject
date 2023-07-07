@@ -19,6 +19,11 @@ class Article
     #[ORM\Column(length: 4000)]
     private ?string $content = null;
 
+    #[ORM\ManyToOne(inversedBy: 'articles')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,4 +52,18 @@ class Article
 
         return $this;
     }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): static
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+   
 }
