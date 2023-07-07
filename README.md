@@ -7,3 +7,4 @@ Les commandes utilisées :
  - composer require annoations  
  - symfony console debug:router
  - symfony console make:registration-form
+ - symfony console make:crud
